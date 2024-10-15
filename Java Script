@@ -1,0 +1,29 @@
+const midtransClient = require('midtrans-client');
+
+// Create Snap API instance
+let snap = new midtransClient.Snap({
+    isProduction : false,
+    serverKey : 'YOUR_SERVER_KEY',
+    clientKey : 'YOUR_CLIENT_KEY'
+});
+
+// Kirim transaksi ke Snap API Midtrans
+app.post('/create-transaction', (req, res) => {
+    let parameter = {
+        "transaction_details": {
+            "order_id": "order-id-" + Math.round((new Date()).getTime() / 1000),
+            "gross_amount": req.body.amount
+        },
+        "credit_card": {
+            "secure": true
+        }
+    };
+
+    snap.createTransaction(parameter)
+        .then((transaction) => {
+            res.send(transaction);
+        })
+        .catch((error) => {
+            res.status(500).send(error);
+        });
+});
