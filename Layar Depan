@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Top-Up Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .game-option {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Top-Up Your Favorite Game</h1>
+        <div class="game-option">
+            <h2>Game 1</h2>
+            <p>ID: <input type="text" placeholder="Enter Player ID"></p>
+            <button onclick="topUp('Game 1')">Top Up</button>
+        </div>
+        <div class="game-option">
+            <h2>Game 2</h2>
+            <p>ID: <input type="text" placeholder="Enter Player ID"></p>
+            <button onclick="topUp('Game 2')">Top Up</button>
+        </div>
+        <div class="game-option">
+            <h2>Game 3</h2>
+            <p>ID: <input type="text" placeholder="Enter Player ID"></p>
+            <button onclick="topUp('Game 3')">Top Up</button>
+        </div>
+    </div>
+
+    <script>
+        function topUp(game) {
+            alert('Top-up for ' + game + ' is being processed!');
+        }
+    </script>
+</body>
+</html>
